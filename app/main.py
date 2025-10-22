@@ -24,12 +24,19 @@ class Cat(Animal):
     def catch_mouse(self) -> None:
         print("The hunt began!")
 
+class Dog(Animal):
+    def __init__(self, name: str, is_hungry: bool = True) -> None:
+        super().__init__(name=name, appetite=7, is_hungry=is_hungry)
+
+    def bring_slippers(self):
+        print("The slippers delivered!")
+
 
 if __name__ == "__main__":
-    cat = Cat("Cat")
-    cat.print_name()  # "Hello, I'm Cat"
-    cat.feed()  # "Eating 3 food points"
+    dog = Dog("Dog")
+    dog.print_name()  # "Hello, I'm Dog"
+    dog.feed()  # "Eating 7 food points"
 
-    cat2 = Cat("Cat", False)
-    print(cat2.feed())  # 0
-    cat2.catch_mouse()
+    dog2 = Dog("Dog", False)
+    print(dog2.feed())  # 0
+    dog2.bring_slippers()
