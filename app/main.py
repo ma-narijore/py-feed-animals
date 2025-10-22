@@ -16,10 +16,20 @@ class Animal:
         else:
             return 0
 
+
+class Cat(Animal):
+    def __init__(self, name: str, is_hungry: bool = True) -> None:
+        super().__init__(name=name, appetite = 3, is_hungry=is_hungry)
+
+    def catch_mouse(self) -> None:
+        print("The hunt began!")
+
+
 if __name__ == "__main__":
-    lion = Animal("Lion", 25)
-    lion.print_name()  # "Hello, I'm Lion"
-    food_points = lion.feed()  # "Eating 25 food points..."
-    print(food_points)  # 25
-    print(lion.is_hungry)  # False
-    print(lion.feed())  # 0
+    cat = Cat("Cat")
+    cat.print_name()  # "Hello, I'm Cat"
+    cat.feed()  # "Eating 3 food points"
+
+    cat2 = Cat("Cat", False)
+    print(cat2.feed())  # 0
+    cat2.catch_mouse()
